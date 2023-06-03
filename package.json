@@ -1,0 +1,44 @@
+{
+  "name": "back-project-kenzie",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node-dev --cls --rs --ignore-watch node_modules src/server.ts",
+    "typeorm": "typeorm-ts-node-commonjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lisboaseyth/back-project-kenzie.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lisboaseyth/back-project-kenzie/issues"
+  },
+  "homepage": "https://github.com/Lisboaseyth/back-project-kenzie#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.1.3",
+    "express": "^4.18.2",
+    "express-async-errors": "^3.1.1",
+    "jsonwebtoken": "^9.0.0",
+    "pg": "^8.11.0",
+    "ts-node-dev": "^2.0.0",
+    "typeorm": "^0.3.16",
+    "zod": "^3.21.4"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17",
+    "@types/jsonwebtoken": "^9.0.2",
+    "@types/node": "^20.2.5",
+    "@types/pg": "^8.10.1",
+    "typescript": "^5.1.3"
+  }
+}
