@@ -13,23 +13,28 @@ export const ensureEmail = async (request: Request, response: Response, next: Ne
 
     const bodyEmail = request.body.email
 
-    if(bodyEmail){
-        const findEmail = await clientRepository.findOneBy({
-            email: bodyEmail
-        })
-        if(findEmail !== null){
-            throw new AppError("Email already exists", 409)
+    try {
+        if (bodyEmail) {
+            const findEmailClient = await clientRepository.findOneBy({
+                email: bodyEmail
+            })
+            if (findEmailClient !== null) {
+                throw new AppError("Email already exists", 409)
+            }
         }
-    }
 
-    if(bodyEmail){
-        const findEmail = await contactRepository.findOneBy({
-            email: bodyEmail
-        })
-        if(findEmail !== null){
-            throw new AppError("Email already exists", 409)
+        if (bodyEmail) {
+            const findEmailContact = await contactRepository.findOneBy({
+                email: bodyEmail
+            })
+            if (findEmailContact !== null) {
+                throw new AppError("Email already exists", 409)
+            }
         }
-    }
 
-    return next()
+        return next()
+    } catch (error: any) {
+        // Aqui você pode lidar com o erro de forma adequada
+        response.status(error.statusCode).json({ error: error.message })
+    }
 }
