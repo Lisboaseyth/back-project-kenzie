@@ -47,6 +47,5 @@ export const updateContactController = async (request: Request, response: Respon
     const updatedContact = await updateContactService(contactData, contactId)
 
     return response.status(200).json(updatedContact)
-
 }
 
