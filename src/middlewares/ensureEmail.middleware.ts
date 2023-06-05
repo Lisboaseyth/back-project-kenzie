@@ -34,7 +34,6 @@ export const ensureEmail = async (request: Request, response: Response, next: Ne
 
         return next()
     } catch (error: any) {
-        // Aqui você pode lidar com o erro de forma adequada
         response.status(error.statusCode).json({ error: error.message })
     }
 }

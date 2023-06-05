@@ -7,15 +7,22 @@ export const ensureClientExists = async (request: Request, response: Response, n
 
     const clientRepository = AppDataSource.getRepository(Client)
 
-    const findClient: Client | null = await clientRepository.findOne({
-        where: {
-            id: request.params.id
+    try {
+        
+        const findClient: Client | null = await clientRepository.findOne({
+            where: {
+                id: request.params.id
+            }
+        })
+    
+        if (!findClient) {
+            throw new AppError("Client not found", 404)
         }
-    })
 
-    if (!findClient) {
-        throw new AppError("Client not found", 404)
+    } catch (error: any) {
+        response.status(error.statusCode).json({ error: error.message })
     }
+
 
     return next()
 

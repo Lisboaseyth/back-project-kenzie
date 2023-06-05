@@ -12,22 +12,29 @@ export const ensureOwner = async (request: Request, response: Response, next: Ne
     const clientId: string = request.client.id
     const contactId: string = request.params.id
 
-    const contact: Contact | null = await contactRepository.findOne({
-        where: {
-            id: contactId
-        },
-        relations: {
-            client: true
-        }
-    })
-
-    if(!contact){
-        throw new AppError("Contact not found", 404)
-    }
+    try {
+        
+        const contact: Contact | null = await contactRepository.findOne({
+            where: {
+                id: contactId
+            },
+            relations: {
+                client: true
+            }
+        })
     
-    if(contact.client.id !== clientId){
-        throw new AppError("Insufficient permission", 403)
+        if(!contact){
+            throw new AppError("Contact not found", 404)
+        }
+        
+        if(contact.client.id !== clientId){
+            throw new AppError("Insufficient permission", 403)
+        }
+
+    } catch (error: any) {
+        response.status(error.statusCode).json({ error: error.message })
     }
+
 
     return next()
 
