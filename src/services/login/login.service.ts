@@ -7,7 +7,7 @@ import { compare } from "bcrypt";
 import jwt from 'jsonwebtoken'
 
 
-export const loginService = async (request: TLogin): Promise<string> => {
+export const loginService = async (request: TLogin): Promise<object> => {
     const clientRepo = AppDataSource.getRepository(Client)
     const findCLient = await clientRepo.findOneBy({ email: request.email })
 
@@ -32,6 +32,13 @@ export const loginService = async (request: TLogin): Promise<string> => {
         }
     )
 
-    return token
+    const returnBody = {
+        token: token,
+        name: findCLient.name,
+        email: findCLient.email,
+        contactNumber: findCLient.contactNumber
+    }
+
+    return returnBody
     
 }

@@ -9,6 +9,6 @@ export const loginController =async (request: Request, response: Response): Prom
     const token = await loginService(requestData)
 
     return response.status(200).json({
-        "token": token
+        "info": token
     })
 }
