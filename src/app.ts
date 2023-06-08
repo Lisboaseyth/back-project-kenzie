@@ -3,6 +3,7 @@ import { handleErrors } from "./error";
 import { clientRoutes } from "./routes/client.routes";
 import { loginRoutes } from "./routes/login.routes";
 import { contactRoutes } from "./routes/contact.routes";
+import cors from "cors";
 
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('../swagger.json');
@@ -10,6 +11,7 @@ const swaggerDocument = require('../swagger.json');
 
 const app: Application = express()
 
+app.use(cors())
 app.use(express.json())
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
