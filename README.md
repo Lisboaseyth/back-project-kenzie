@@ -14,8 +14,8 @@ PATCH /client/:id: Atualização um cliente.\
 DELETE /client/:id: Deleta o cliente.\
 POST /contact: Criação de um novo contato.\
 GET /contact: Lista todos os contatos do cliente logado.\
-PATCH /contact/:id: Atualiza um contato.\
-DELETE /contact/:id: deleta um contato.
+PATCH /contact/:idContact: Atualiza um contato.\
+DELETE /contact/:idContact: deleta um contato.
 
 ## Execução do Projeto
 

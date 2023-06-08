@@ -3,7 +3,6 @@ import { ZodTypeAny } from "zod"
 
 export const ensureDataIsValid = (schema: ZodTypeAny) => (request: Request, response: Response, next: NextFunction) => {
 
-
     try {
         
         const validatedData = schema.parse(request.body)

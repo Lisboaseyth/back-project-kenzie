@@ -25,5 +25,5 @@ export const updateContactService = async (data: TContactUpdate, contactId: stri
     contactRepository.save(contactUpdate)
 
     return contactSchemaResponse.parse(contactUpdate)
-
+    
 }

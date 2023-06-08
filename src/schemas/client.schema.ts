@@ -20,8 +20,11 @@ export const clientSchemaResponse = clientSchema.extend({
     password: true
 })
 
-export const clientSchemaUpdate = clientSchema.partial().omit({
-    id: true
-});
+export const clientSchemaUpdate = z.object({
+    name: z.string().optional(),
+    email: z.string().email().optional(),
+    contactNumber: z.string().optional(),
+    password: z.string().optional()
+})
 
 export const clientArraySchema = clientSchemaResponse.array()

@@ -1,4 +1,4 @@
-import { TClientResponse, TClientUpdate } from "../../interfaces/client.interface";
+import { TClientResponse, TClientUpdate, TClientUpdateNew } from "../../interfaces/client.interface";
 import { Repository } from "typeorm";
 import { Client } from "../../entities/client.entity";
 import { AppDataSource } from "../../data-source";
@@ -6,7 +6,7 @@ import bcrypt from "bcrypt"
 import { clientSchemaResponse } from "../../schemas/client.schema";
 
 
-export const updateClientService = async (data: TClientUpdate, clientId: string): Promise<TClientResponse> => {
+export const updateClientService = async (data: TClientUpdate, clientId: string): Promise<TClientUpdateNew> => {
     
     const clientRepository: Repository<Client> = AppDataSource.getRepository(Client)
 
