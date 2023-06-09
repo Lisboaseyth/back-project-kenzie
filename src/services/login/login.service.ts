@@ -31,7 +31,7 @@ export const loginService = async (request: TLogin): Promise<object> => {
             subject: findCLient.id
         }
     )
-
+    
     const returnBody = {
         token: token,
         id: findCLient.id,
