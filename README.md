@@ -9,12 +9,12 @@ Segue os endpoints disponiveis da aplicação:
 POST /login: Gera o token de autenticação.\
 GET /client: Lista todos os clientes.\
 POST /client: Criação de um novo cliente.\
-GET /client/profile: Lista o cliente logado.\
-DELETE /client/:id: Deleta o cliente.\
-POST /contact: Criação de um novo contato.\
-GET /contact: Lista todos os contatos do cliente logado.\
-PATCH /contact/:idContact: Atualiza um contato.\
-DELETE /contact/:idContact: deleta um contato.
+GET /client/profile: Lista o cliente logado - Necessita de autenticação.\
+DELETE /client/:id: Deleta o cliente - Necessita de autenticação.\
+POST /contact: Criação de um novo contato - Necessita de autenticação.\
+GET /contact: Lista todos os contatos do cliente logado - Necessita de autenticação.\
+PATCH /contact/:idContact: Atualiza um contato - Necessita de autenticação.\
+DELETE /contact/:idContact: deleta um contato - Necessita de autenticação.
 
 ## Execução do Projeto
 
