@@ -10,7 +10,6 @@ POST /login: Gera o token de autenticação.\
 GET /client: Lista todos os clientes.\
 POST /client: Criação de um novo cliente.\
 GET /client/profile: Lista o cliente logado.\
-PATCH /client/:id: Atualização um cliente.\
 DELETE /client/:id: Deleta o cliente.\
 POST /contact: Criação de um novo contato.\
 GET /contact: Lista todos os contatos do cliente logado.\
