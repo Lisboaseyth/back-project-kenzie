@@ -38,10 +38,10 @@ npm install
 ```bash
 
 # Utilizando o yarn
-yarn run migrate
+yarn migration:prod
 
 # Utilizando o npm
-npm run migrate
+npm run migration:prod
 ```
 
 4. Inicie o servidor:
