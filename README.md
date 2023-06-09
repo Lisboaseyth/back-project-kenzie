@@ -2,7 +2,7 @@
 
 Sua Solução para organizar contatos!
 
-## Endpoints da aplicação
+## 🔗 Endpoints da aplicação
 
 Segue os endpoints disponiveis da aplicação:
 
@@ -16,7 +16,7 @@ GET /contact: Lista todos os contatos do cliente logado - Necessita de autentica
 PATCH /contact/:idContact: Atualiza um contato - Necessita de autenticação.\
 DELETE /contact/:idContact: deleta um contato - Necessita de autenticação.
 
-## Execução do Projeto
+## 🔧 Execução do Projeto
 
 1. Para executar este projeto, é necessário executar o comando para instalar as dependências, que serão utilizadas. Portanto utilize o comando abaixo para instalar as dependências:
 
