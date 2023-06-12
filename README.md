@@ -38,10 +38,10 @@ npm install
 ```bash
 
 # Utilizando o yarn
-yarn migration:prod
+yarn typeorm migration:run -d dist/data-source
 
 # Utilizando o npm
-npm run migration:prod
+npm run typeorm migration:run -d dist/data-source
 ```
 
 4. Inicie o servidor:
