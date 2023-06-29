@@ -23,15 +23,6 @@ export const ensureEmail = async (request: Request, response: Response, next: Ne
             }
         }
 
-        if (bodyEmail) {
-            const findEmailContact = await contactRepository.findOneBy({
-                email: bodyEmail
-            })
-            if (findEmailContact !== null) {
-                throw new AppError("Email already exists", 409)
-            }
-        }
-
         return next()
     } catch (error: any) {
         response.status(error.statusCode).json({ error: error.message })
